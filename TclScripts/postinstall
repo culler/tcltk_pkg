@@ -1,0 +1,9 @@
+#!/bin/bash
+
+VRSN="9.1"
+
+rm -f /Library/Frameworks/Tcl.framework/Versions/Current
+ln -s ${VRSN} /Library/Frameworks/Tcl.framework/Versions/Current
+rm -f /usr/local/bin/tclsh${VRSN}
+ln -s /Library/Frameworks/Tcl.framework/Versions/Current/tclsh${VRSN} /usr/local/bin/tclsh${VRSN}
+
