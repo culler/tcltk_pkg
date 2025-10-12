@@ -9,7 +9,7 @@ TCL_FRAMEWORK="build/tk/Tcl.framework"
 TCL_VERSION_DIR="${TCL_FRAMEWORK}/Versions/Current"
 TK_FRAMEWORK="build/tk/Tk.framework"
 TK_VERSION_DIR="${TK_FRAMEWORK}/Versions/Current"
-
+WISH_APP="${TK_VERSION_DIR}/Resources/Wish.app"
 CODESIGN_OPTS="-v -s A3LBEGBB69 --options runtime --force \
 --timestamp --entitlements ../entitlements.plist"
 
@@ -53,8 +53,12 @@ popd
 
 codesign ${CODESIGN_OPTS} ${TCL_VERSION_DIR}/tclsh*
 codesign ${CODESIGN_OPTS} ${TCL_VERSION_DIR}/Tcl
+codesign ${CODESIGN_OPTS} ${TCL_FRAMEWORK}
 codesign ${CODESIGN_OPTS} ${TK_VERSION_DIR}/wish*
 codesign ${CODESIGN_OPTS} ${TK_VERSION_DIR}/Tk
+codesign ${CODESIGN_OPTS} ${WISH_APP}/Contents/MacOS/Wish
+codesign ${CODESIGN_OPTS} ${WISH_APP}
+codesign ${CODESIGN_OPTS} ${TK_FRAMEWORK}
 
 VRSN=`readlink build/tk/Tk.framework/Versions/Current`
 PKG_ROOT=build/tk

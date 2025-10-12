@@ -1,7 +1,7 @@
 #!/bin/bash
 source ../IDs.sh
-TCLLIB_DIR=`ls dist/lib | grep 'tcllib\([0-9]*\.[0=9]*\)'`
-TCLLIB_VER=`echo ${TCLLIB_DIR} | sed 's/tcllib//'`
+TCLLIB=`ls dist/lib | grep 'tcllib\([0-9]*\.[0=9]*\)'`
+TCLLIB_VER=`echo ${TCLLIB} | sed 's/tcllib//'`
 TCL_VER=`readlink ../TclTk_build/build/tk/Tcl.framework/Versions/Current`
 FRAMEWORK="/Library/Frameworks/Tcl.framework"
 INSTALL_DIR=${FRAMEWORK}/Versions/${TCL_VER}/Resources/Scripts

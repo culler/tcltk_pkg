@@ -23,12 +23,12 @@
         <pkg-ref id="org.tcl-lang.core-Tcllib9.1.0"/>
     </choice>
     <pkg-ref id="org.tcl-lang.core-Tcl9.1.0" version="9.1.0" onConclusion="none">
-      TclTk_build/tcl.pkg
+      tcl.pkg
     </pkg-ref>
     <pkg-ref id="org.tcl-lang.core-Tk9.1.0" version="9.1.0" onConclusion="none">
-      TclTk_build/tk.pkg
+      tk.pkg
     </pkg-ref>
     <pkg-ref id="org.tcl-lang.core-Tcllib9.1.0" version="9.1.0" onConclusion="none">
-      TclLib_build/tcllib.pkg
+      tcllib.pkg
     </pkg-ref>
 </installer-gui-script>
