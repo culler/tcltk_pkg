@@ -1,0 +1,18 @@
+#!/bin/bash
+source ./IDs.sh
+VERSION=`readlink TclTk_build/build/tk/Tcl.framework/Versions/Current`
+mkdir -p temp
+
+# Assemble all of the packages as components of a product.
+productbuild --distribution distribution.plist \
+	     --resources resources \
+	     temp/tcltk.pkg
+productsign --sign $DEV_ID temp/tcltk${VERSION}.pkg tcltk.pkg
+
+# Notarize the product
+xcrun notarytool submit tcltk.pkg \
+      --apple-id $APPLE_ID \
+      --team-id $DEV_ID \
+      --password $ONE_TIME_PASS \
+      --wait
+xcrun stapler staple tcltk.pkg 
