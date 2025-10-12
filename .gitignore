@@ -1,0 +1,7 @@
+IDs.sh
+*~
+*.pkg
+build
+temp
+dist
+*.tar.gz

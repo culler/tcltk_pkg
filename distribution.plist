@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<installer-gui-script minSpecVersion="1">
+    <title>Tcl/Tk</title>
+    <background alignment="bottomleft" file="Tcl9logo.png" mime-type="image/png" scaling="proportional"/>
+    <welcome file="Welcome.html" mime-type="text/html"/>
+
+    <pkg-ref id="org.tcl-lang.core-Tk9.1.0"/>
+    <pkg-ref id="org.tcl-lang.core-Tcl9.1.0"/>
+    <pkg-ref id="org.tcl-lang.core-Tcllib2.0"/>
+    <options customize="allow" require-scripts="true" hostArchitectures="x86_64,arm64"/>
+    <choices-outline>
+      <line choice="org.tcl-lang.core-Tcl9.1.0" selected="true"/>
+      <line choice="org.tcl-lang.core-Tk9.1.0" selected="true"/>
+      <line choice="org.tcl-lang.core-Tcllib9.1.0" selected="false"/>
+    </choices-outline>
+    <choice id="org.tcl-lang.core-Tk9.1.0" title="Tcl" selected="true">
+        <pkg-ref id="org.tcl-lang.core-Tk9.1.0"/>
+    </choice>
+    <choice id="org.tcl-lang.core-Tcl9.1.0" title="Tk" selected="true">
+        <pkg-ref id="org.tcl-lang.core-Tcl9.1.0"/>
+    </choice>
+    <choice id="org.tcl-lang.core-Tcllib9.1.0" title="Tcllib" selected="false">
+        <pkg-ref id="org.tcl-lang.core-Tcllib9.1.0"/>
+    </choice>
+    <pkg-ref id="org.tcl-lang.core-Tcl9.1.0" version="9.1.0" onConclusion="none">
+      TclTk_build/tcl.pkg
+    </pkg-ref>
+    <pkg-ref id="org.tcl-lang.core-Tk9.1.0" version="9.1.0" onConclusion="none">
+      TclTk_build/tk.pkg
+    </pkg-ref>
+    <pkg-ref id="org.tcl-lang.core-Tcllib9.1.0" version="9.1.0" onConclusion="none">
+      TclLib_build/tcllib.pkg
+    </pkg-ref>
+</installer-gui-script>
