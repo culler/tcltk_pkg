@@ -1,7 +1,10 @@
 IDs.sh
 *~
 *.pkg
+*.tar.gz
 build
 temp
 dist
-*.tar.gz
+tcl
+tk
+tcllib
