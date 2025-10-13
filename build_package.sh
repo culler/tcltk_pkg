@@ -1,13 +1,12 @@
 #!/bin/bash
 source ./IDs.sh
-VERSION=`readlink TclTk_build/build/tk/Tcl.framework/Versions/Current`
 mkdir -p temp
 
 # Assemble all of the packages as components of a product.
 productbuild --distribution distribution.plist \
 	     --resources resources \
 	     temp/tcltk.pkg
-productsign --sign $DEV_ID temp/tcltk${VERSION}.pkg tcltk.pkg
+productsign --sign $DEV_ID temp/tcltk.pkg tcltk.pkg
 
 # Notarize the product
 xcrun notarytool submit tcltk.pkg \
