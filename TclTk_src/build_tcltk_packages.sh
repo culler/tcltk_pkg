@@ -6,7 +6,7 @@ TCL_VERSION_DIR="${TCL_FRAMEWORK}/Versions/Current"
 TK_FRAMEWORK="build/tk/Tk.framework"
 TK_VERSION_DIR="${TK_FRAMEWORK}/Versions/Current"
 WISH_APP="${TK_VERSION_DIR}/Resources/Wish.app"
-CODESIGN_OPTS="-v -s A3LBEGBB69 --options runtime --force \
+CODESIGN_OPTS="-v -s $DEV_ID --options runtime --force \
 --timestamp --entitlements ../entitlements.plist"
 
 codesign ${CODESIGN_OPTS} ${TCL_VERSION_DIR}/tclsh*

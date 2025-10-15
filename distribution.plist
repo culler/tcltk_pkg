@@ -6,21 +6,31 @@
 
     <pkg-ref id="org.tcl-lang.core-Tk9.1.0"/>
     <pkg-ref id="org.tcl-lang.core-Tcl9.1.0"/>
-    <pkg-ref id="org.tcl-lang.core-Tcllib2.0"/>
+    <pkg-ref id="org.tcl-lang.core-TclLib2.0"/>
+    <pkg-ref id="org.tcl-lang.core-TkLib0.9"/>
+    <pkg-ref id="org.tcl-lang.core-Sqlite3.50.4"/>
     <options customize="allow" require-scripts="true" hostArchitectures="x86_64,arm64"/>
     <choices-outline>
-      <line choice="org.tcl-lang.core-Tcl9.1.0" selected="true"/>
-      <line choice="org.tcl-lang.core-Tk9.1.0" selected="true"/>
-      <line choice="org.tcl-lang.core-Tcllib9.1.0" selected="false"/>
+      <line choice="org.tcl-lang.core-Tcl9.1.0"/>
+      <line choice="org.tcl-lang.core-Tk9.1.0"/>
+      <line choice="org.tcl-lang.core-TclLib2.0"/>
+      <line choice="org.tcl-lang.core-TkLib0.9"/>
+      <line choice="org.tcl-lang.core-Sqlite3.50.4"/>
     </choices-outline>
-    <choice id="org.tcl-lang.core-Tk9.1.0" title="Tcl" selected="true">
-        <pkg-ref id="org.tcl-lang.core-Tk9.1.0"/>
-    </choice>
     <choice id="org.tcl-lang.core-Tcl9.1.0" title="Tk" selected="true">
         <pkg-ref id="org.tcl-lang.core-Tcl9.1.0"/>
     </choice>
-    <choice id="org.tcl-lang.core-Tcllib9.1.0" title="Tcllib" selected="false">
-        <pkg-ref id="org.tcl-lang.core-Tcllib9.1.0"/>
+    <choice id="org.tcl-lang.core-Tk9.1.0" title="Tcl" selected="true">
+        <pkg-ref id="org.tcl-lang.core-Tk9.1.0"/>
+    </choice>
+    <choice id="org.tcl-lang.core-TclLib2.0" title="TclLib">
+        <pkg-ref id="org.tcl-lang.core-TclLib2.0"/>
+    </choice>
+    <choice id="org.tcl-lang.core-TkLib0.9" title="TclLib">
+        <pkg-ref id="org.tcl-lang.core-TkLib0.9"/>
+    </choice>
+    <choice id="org.tcl-lang.core-Sqlite3.50.4" title="Sqlite">
+        <pkg-ref id="org.tcl-lang.core-Sqlite3.50.4"/>
     </choice>
     <pkg-ref id="org.tcl-lang.core-Tcl9.1.0" version="9.1.0" onConclusion="none">
       tcl.pkg
@@ -28,7 +38,13 @@
     <pkg-ref id="org.tcl-lang.core-Tk9.1.0" version="9.1.0" onConclusion="none">
       tk.pkg
     </pkg-ref>
-    <pkg-ref id="org.tcl-lang.core-Tcllib9.1.0" version="9.1.0" onConclusion="none">
+    <pkg-ref id="org.tcl-lang.core-TclLib2.0" version="2.0" onConclusion="none">
       tcllib.pkg
+    </pkg-ref>
+    <pkg-ref id="org.tcl-lang.core-TkLib0.9" version="0.9" onConclusion="none">
+      tklib.pkg
+    </pkg-ref>
+    <pkg-ref id="org.tcl-lang.core-Sqlite3.50.4" version="3.50.4" onConclusion="none">
+      sqlite.pkg
     </pkg-ref>
 </installer-gui-script>
