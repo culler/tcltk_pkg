@@ -1,5 +1,5 @@
 TCL_FRAMEWORK := TclTk_src/build/tcl/Tcl.framework
-COMPONENTS := tcl.pkg tk.pkg tcllib.pkg tklib.pkg sqlite.pkg
+COMPONENTS := tcl.pkg tk.pkg tcllib.pkg tklib.pkg sqlite.pkg tcltls.pkg
 
 .phony: package clean all_clean
 
@@ -8,7 +8,7 @@ package: tcltk.pkg
 	rm -f tcltk$${VERSION}.pkg; \
 	mv tcltk.pkg tcltk$${VERSION}.pkg
 
-tcltk.pkg: tcl.pkg tk.pkg tcllib.pkg
+tcltk.pkg: ${COMPONENTS}
 	bash build_package.sh
 
 tcl.pkg tk.pkg:
@@ -26,6 +26,10 @@ tklib.pkg:
 sqlite.pkg:
 	make -C Sqlite_src
 	cp Sqlite_src/sqlite.pkg .
+
+tcltls.pkg:
+	make -C TclTLS_src
+	cp TclTLS_src/tcltls.pkg .
 
 clean:
 	rm -rf ${COMPONENTS} temp

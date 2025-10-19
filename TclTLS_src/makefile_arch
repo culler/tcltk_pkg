@@ -1,0 +1,28 @@
+CFLAGS = -arch ${ARCH} -mmacosx-version-min=10.13
+TCLTLS_URL = https://chiselapp.com/user/bohagan/repository/TCLTLS
+PWD = $(shell pwd)
+PKGCONFIG_DIR = ${PWD}/../openssl/${ARCH}/lib/pkgconfig
+DIST = ${PWD}/dist-${ARCH}
+ARCH = undefined
+ifeq (${ARCH},undefined)
+     $(error Set ARCH to arm64 or x86_64)
+endif
+
+.phony: package clean
+
+package: tcltls
+	mkdir -p ${DIST}
+	cd tcltls; \
+	make distclean; \
+	./configure \
+	--prefix=${DIST} \
+	--exec-prefix=${DIST} \
+	--with-openssl-pkgconfig=${PKGCONFIG_DIR}
+	make -C tcltls CFLAGS="${CFLAGS}" install
+
+tcltls: tcltls.tar.gz
+	tar xfz tcltls.tar.gz
+
+tcltls.tar.gz:
+	curl -L -O ${TCLTLS_URL}/tarball/tcltls.tar.gz
+

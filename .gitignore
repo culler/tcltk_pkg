@@ -5,6 +5,13 @@ IDs.sh
 build
 temp
 dist
+dist-*
 tcl
 tk
 tcllib
+Sqlite_src/sqlite*
+TclTLS_src/tcltls
+TkLib_src/tklib
+arm64
+x86_64
+openssl-3*

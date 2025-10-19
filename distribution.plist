@@ -9,6 +9,7 @@
     <pkg-ref id="org.tcl-lang.core-TclLib2.0"/>
     <pkg-ref id="org.tcl-lang.core-TkLib0.9"/>
     <pkg-ref id="org.tcl-lang.core-Sqlite3.50.4"/>
+    <pkg-ref id="org.tcl-lang.core-TclTLS2.0"/>
     <options customize="allow" require-scripts="true" hostArchitectures="x86_64,arm64"/>
     <choices-outline>
       <line choice="org.tcl-lang.core-Tcl9.1.0"/>
@@ -16,6 +17,7 @@
       <line choice="org.tcl-lang.core-TclLib2.0"/>
       <line choice="org.tcl-lang.core-TkLib0.9"/>
       <line choice="org.tcl-lang.core-Sqlite3.50.4"/>
+      <line choice="org.tcl-lang.core-TclTLS2.0"/>
     </choices-outline>
     <choice id="org.tcl-lang.core-Tcl9.1.0" title="Tk" selected="true">
         <pkg-ref id="org.tcl-lang.core-Tcl9.1.0"/>
@@ -26,11 +28,14 @@
     <choice id="org.tcl-lang.core-TclLib2.0" title="TclLib">
         <pkg-ref id="org.tcl-lang.core-TclLib2.0"/>
     </choice>
-    <choice id="org.tcl-lang.core-TkLib0.9" title="TclLib">
+    <choice id="org.tcl-lang.core-TkLib0.9" title="TkLib">
         <pkg-ref id="org.tcl-lang.core-TkLib0.9"/>
     </choice>
     <choice id="org.tcl-lang.core-Sqlite3.50.4" title="Sqlite">
         <pkg-ref id="org.tcl-lang.core-Sqlite3.50.4"/>
+    </choice>
+    <choice id="org.tcl-lang.core-TclTLS2.0" title="TclTLS">
+        <pkg-ref id="org.tcl-lang.core-TclTLS2.0"/>
     </choice>
     <pkg-ref id="org.tcl-lang.core-Tcl9.1.0" version="9.1.0" onConclusion="none">
       tcl.pkg
@@ -46,5 +51,8 @@
     </pkg-ref>
     <pkg-ref id="org.tcl-lang.core-Sqlite3.50.4" version="3.50.4" onConclusion="none">
       sqlite.pkg
+    </pkg-ref>
+    <pkg-ref id="org.tcl-lang.core-TclTLS2.0" version="2.0" onConclusion="none">
+      tcltls.pkg
     </pkg-ref>
 </installer-gui-script>
