@@ -41,3 +41,4 @@ all_clean:
 	make -C TclLib_src clean
 	make -C TkLib_src clean
 	make -C Sqlite_src clean
+	make -C TclTLS_src clean

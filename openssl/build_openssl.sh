@@ -1,7 +1,14 @@
 #!/bin/bash
+set -e
+OPENSSL_VERSION="3.6.0"
+URL="https://github.com/openssl/openssl/releases/download/openssl-${OPENSSL_VERSION}/openssl-${OPENSSL_VERSION}.tar.gz"
+if ! [ -e openssl-${OPENSSL_VERSION} ]; then
+    curl -L -O ${URL}
+    tar xfz openssl-${OPENSSL_VERSION}.tar.gz
+fi
 rm -rf arm64 x86_64
 mkdir arm64 x86_64
-cd openssl-3.6.0
+cd openssl-${OPENSSL_VERSION}
 if [ -e Makefile ]; then
     make distclean
 fi
