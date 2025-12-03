@@ -36,9 +36,9 @@ jobs:
           security list-keychain -d user -s $KEYCHAIN_PATH
 
           # Create IDs.sh
-          echo -e "APPLE_ID=$DEV_APPLE_ID"  > IDs.sh
-          echo -e "ONE_TIME_PASS=$DEV_PASSWORD"  >> IDs.sh
-          echo -e "DEV_ID=$DEV_ID"  >> IDs.sh
+          echo "export APPLE_ID=$DEV_APPLE_ID"  > IDs.sh
+          echo "export ONE_TIME_PASS=$DEV_PASSWORD"  >> IDs.sh
+          echo "export DEV_ID=$DEV_ID"  >> IDs.sh
 
       - name: Run build script
         run: |
