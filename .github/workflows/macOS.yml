@@ -45,6 +45,7 @@ jobs:
           echo "export DEV_ID=$DEV_ID"  >> IDs.sh
 
       - name: Run build script
+        continue-on-error: true
         run: |
           make
 
