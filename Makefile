@@ -14,6 +14,7 @@ tcltk.pkg: ${COMPONENTS}
 tcl.pkg tk.pkg:
 	make -C TclTk_src
 	cp TclTk_src/{tcl,tk}.pkg .
+	sudo make -C Tcltk_src/tcl/macosx install
 
 tcllib.pkg:
 	make -C TclLib_src
@@ -27,9 +28,13 @@ sqlite.pkg:
 	make -C Sqlite_src
 	cp Sqlite_src/sqlite.pkg .
 
-tcltls.pkg:
+tcltls.pkg: openssl/arm64 openssl/x86_64
 	make -C TclTLS_src
 	cp TclTLS_src/tcltls.pkg .
+
+openssl/arm64 openssl/x86_64:
+	cd openssl; \
+	bash build_openssl.sh
 
 clean:
 	rm -rf ${COMPONENTS} temp
@@ -37,6 +42,7 @@ clean:
 all_clean:
 	make clean
 	rm -rf *.pkg
+	rm -rf openssl/{arm64,x86_64}
 	make -C TclTk_src clean
 	make -C TclLib_src clean
 	make -C TkLib_src clean

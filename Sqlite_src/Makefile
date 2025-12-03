@@ -1,6 +1,7 @@
 SHELL := /bin/bash
-TCL_FRAMEWORK := ../TclTk_src/build/tcl/Tcl.framework
+TCL_FRAMEWORK := ../../TclTk_src/build/tcl/Tcl.framework
 TCL_VERSION = $(shell readlink ${TCL_FRAMEWORK}/Versions/Current)
+TCLSH := ../../TclTk_src/build/tcl/tclsh${TCL_VERSION}
 SQLITE_VERSION := 3.50.4
 SQLITE_DIR := sqlite-src-3500400
 SQLITE_URL := https://sqlite.org/2025/sqlite-src-3500400.zip
@@ -35,7 +36,7 @@ ${SQLITE_DIR}.zip:
 
 ${DYLIB} ${INDEX}: ${SQLITE_DIR}
 	cd ${SQLITE_DIR}; \
-	./configure; \
+	./configure --with-tcl=${TCL_FRAMEWORK} -with-tclsh=${TCLSH}; \
 	CFLAGS=${SQLITE_CFLAGS}; \
 	make -e tclextension
 

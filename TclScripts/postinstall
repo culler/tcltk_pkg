@@ -1,7 +1,7 @@
 #!/bin/bash
 
 VRSN="9.1"
-
+mkdir -p /usr/local/bin
 rm -f /Library/Frameworks/Tcl.framework/Versions/Current
 ln -s ${VRSN} /Library/Frameworks/Tcl.framework/Versions/Current
 rm -f /usr/local/bin/tclsh${VRSN}

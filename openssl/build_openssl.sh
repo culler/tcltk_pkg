@@ -14,7 +14,7 @@ if [ -e Makefile ]; then
 fi
 ./Configure --prefix=`realpath ../arm64` darwin64-arm64 \
 	    -mmacosx-version-min=11.0
-make install
+make install_sw
 sed -i '' 's|Libs: .*|Libs: ${prefix}/lib/libcrypto.a|' \
     ../arm64/lib/pkgconfig/libcrypto.pc
 sed -i '' 's|Libs: .*|Libs: ${prefix}/lib/libssl.a|' \
@@ -25,7 +25,7 @@ if [ -e Makefile ]; then
 fi
 ./Configure --prefix=`realpath ../x86_64` darwin64-x86_64 \
 	    -mmacosx-version-min=10.13
-make install
+make install_sw
 sed -i '' 's|Libs: .*|Libs: ${prefix}/lib/libcrypto.a|' \
     ../x86_64/lib/pkgconfig/libcrypto.pc
 sed -i '' 's|Libs: .*|Libs: ${prefix}/lib/libssl.a|' \
