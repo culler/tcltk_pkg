@@ -14,7 +14,8 @@ tcltk.pkg: ${COMPONENTS}
 tcl.pkg tk.pkg:
 	make -C TclTk_src
 	cp TclTk_src/{tcl,tk}.pkg .
-	sudo make -C Tcltk_src/tcl/macosx install
+	# The install always fails on a clean system because the doc build wants Tcl 8.5
+	sudo make -C Tcltk_src/tcl/macosx install || true
 
 tcllib.pkg:
 	make -C TclLib_src
