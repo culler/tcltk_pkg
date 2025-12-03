@@ -1,5 +1,4 @@
 TCLTLS_URL = https://chiselapp.com/user/bohagan/repository/TCLTLS
-DEV_ID = $(shell source ../IDs.sh; echo $$DEV_ID)
 # The version of the tip of the TLS fossil repo must be provided here.
 # How to automate this?
 TLS_VERSION = 1.8.0
@@ -16,6 +15,7 @@ INSTALL_DIR=${FRAMEWORK}/Versions/${TCL_VER}/Resources/Scripts/tcltls
 
 tcltls.pkg: ${DYLIB}
 	mkdir -p temp;
+	source ../IDs.sh; \
 	PKG_NAME = `ls dist-x86_64/lib`; \
 	pkgbuild --root dist/${PKG_NAME} \
           --identifier core.tcl-lang.org-${PKG_NAME} \
