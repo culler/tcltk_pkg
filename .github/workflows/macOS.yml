@@ -44,11 +44,11 @@ jobs:
           echo "export ONE_TIME_PASS=$DEV_PASSWORD"  >> IDs.sh
           echo "export DEV_ID=$DEV_ID"  >> IDs.sh
 
-      # - name: Run build script
-      #   run: |
-      #     make
+      - name: Run build script
+        run: |
+          make
 
-      # - uses: actions/upload-artifact@v4
-      #   with:
-      #     name: package
-      #     path: tcltk9.1.pkg
+      - uses: actions/upload-artifact@v4
+        with:
+          name: package
+          path: tcltk9.1.pkg
