@@ -17,6 +17,7 @@ jobs:
           INSTALLER_CERTIFICATE_BASE64: ${{ secrets.INSTALLER_CERTIFICATE_BASE64 }}
           P12_PASSWORD: ${{ secrets.P12_PASSWORD }}
           KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+          DEV_APPLE_ID: ${{ secrets.DEV_APPLE_ID }}
           DEV_ID: ${{ secrets.DEV_ID }}
         run: |
           # create variables

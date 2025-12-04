@@ -1,6 +1,5 @@
 #!/bin/bash
 source ./IDs.sh
-echo $APPLE_ID
 mkdir -p temp
 
 # Assemble all of the packages as components of a product.
