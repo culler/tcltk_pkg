@@ -16,13 +16,12 @@ INSTALL_DIR=${FRAMEWORK}/Versions/${TCL_VER}/Resources/Scripts/tcltls
 tcltls.pkg: ${DYLIB}
 	mkdir -p temp;
 	source ../IDs.sh; \
-	PKG_NAME = `ls dist-x86_64/lib`; \
 	pkgbuild --root dist/${PKG_NAME} \
           --identifier core.tcl-lang.org-${PKG_NAME} \
           --version ${TCLTLS_VERSION} \
           --install-location ${INSTALL_DIR} \
           temp/tcltls.pkg;
-	productsign --sign ${DEV_ID} temp/tcltls.pkg tcltls.pkg
+	productsign --sign $${DEV_ID} temp/tcltls.pkg tcltls.pkg
 
 ${DYLIB}: tcltls
 	mkdir -p dist
