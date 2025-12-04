@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   build_package:
-    name: Build and sign macOS Installer package
+    name: Build signed and notarized  macOS Installer package
     runs-on: macos-latest
 
     steps:
