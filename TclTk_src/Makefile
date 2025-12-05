@@ -1,6 +1,8 @@
-BRANCH := main
-TCL_URL := https://core.tcl-lang.org/tcl/tarball/${BRANCH}/tcl.tar.gz
-TK_URL := https://core.tcl-lang.org/tk/tarball/${BRANCH}/tk.tar.gz
+TCL_BRANCH := main
+# Temporary - to fix demos
+TK_BRANCH := mac_demos
+TCL_URL := https://core.tcl-lang.org/tcl/tarball/${TCL_BRANCH}/tcl.tar.gz
+TK_URL := https://core.tcl-lang.org/tk/tarball/${TK_BRANCH}/tk.tar.gz
 CFLAGS := -arch x86_64 -arch arm64 -mmacosx-version-min=10.13
 TCL_FRAMEWORK := build/tcl/Tcl.framework
 TCL_VERSION_DIR := ${TCL_FRAMEWORK}/Versions/Current
