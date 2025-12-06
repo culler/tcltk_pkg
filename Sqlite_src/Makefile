@@ -36,8 +36,8 @@ ${SQLITE_DIR}.zip:
 
 ${DYLIB} ${INDEX}: ${SQLITE_DIR}
 	cd ${SQLITE_DIR}; \
-	./configure --with-tcl=${TCL_FRAMEWORK} -with-tclsh=${TCLSH}; \
-	CFLAGS=${SQLITE_CFLAGS}; \
+	./configure --with-tcl="${TCL_FRAMEWORK}" -with-tclsh="${TCLSH}"; \
+	CFLAGS="${SQLITE_CFLAGS}"; \
 	make -e tclextension
 
 ${SQLITE}: ${DYLIB} ${INDEX}
