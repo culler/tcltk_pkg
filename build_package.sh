@@ -13,5 +13,6 @@ xcrun notarytool submit tcltk.pkg \
       --apple-id $APPLE_ID \
       --team-id $DEV_ID \
       --password $ONE_TIME_PASS \
-      --wait
+      --wait \
+      --no-progress
 xcrun stapler staple tcltk.pkg 

@@ -4,6 +4,7 @@ VRSN="9.1"
 
 rm -f /Library/Frameworks/Tk.framework/Versions/Current
 ln -s ${VRSN} /Library/Frameworks/Tk.framework/Versions/Current
-rm -f /usr/local/bin/wish${VRSN}
-ln -s /Library/Frameworks/Tk.framework/Versions/Current/wish${VRSN} /usr/local/bin/wish${VRSN}
+rm -f /usr/local/bin/wish
+ln -s wish${VRSN} /usr/local/bin/wish
+
 

@@ -6,6 +6,7 @@
 
     <pkg-ref id="org.tcl-lang.core-Tk9.1.0"/>
     <pkg-ref id="org.tcl-lang.core-Tcl9.1.0"/>
+    <pkg-ref id="org.tcl-lang.core-bin9.1.0"/>    
     <pkg-ref id="org.tcl-lang.core-TclLib2.0"/>
     <pkg-ref id="org.tcl-lang.core-TkLib0.9"/>
     <pkg-ref id="org.tcl-lang.core-Sqlite3.50.4"/>
@@ -14,6 +15,7 @@
     <choices-outline>
       <line choice="org.tcl-lang.core-Tcl9.1.0"/>
       <line choice="org.tcl-lang.core-Tk9.1.0"/>
+      <line choice="org.tcl-lang.core-bin9.1.0"/>
       <line choice="org.tcl-lang.core-TclLib2.0"/>
       <line choice="org.tcl-lang.core-TkLib0.9"/>
       <line choice="org.tcl-lang.core-Sqlite3.50.4"/>
@@ -24,6 +26,9 @@
     </choice>
     <choice id="org.tcl-lang.core-Tk9.1.0" title="Tcl" selected="true">
         <pkg-ref id="org.tcl-lang.core-Tk9.1.0"/>
+    </choice>
+    <choice id="org.tcl-lang.core-bin9.1.0" title="bin" selected="true">
+        <pkg-ref id="org.tcl-lang.core-bin9.1.0"/>
     </choice>
     <choice id="org.tcl-lang.core-TclLib2.0" title="TclLib">
         <pkg-ref id="org.tcl-lang.core-TclLib2.0"/>
@@ -42,6 +47,9 @@
     </pkg-ref>
     <pkg-ref id="org.tcl-lang.core-Tk9.1.0" version="9.1.0" onConclusion="none">
       tk.pkg
+    </pkg-ref>
+    <pkg-ref id="org.tcl-lang.core-bin9.1.0" version="9.1.0" onConclusion="none">
+      bin.pkg
     </pkg-ref>
     <pkg-ref id="org.tcl-lang.core-TclLib2.0" version="2.0" onConclusion="none">
       tcllib.pkg

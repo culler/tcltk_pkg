@@ -8,7 +8,14 @@ TK_VERSION_DIR="${TK_FRAMEWORK}/Versions/Current"
 WISH_APP="${TK_VERSION_DIR}/Resources/Wish.app"
 CODESIGN_OPTS="-v -s $DEV_ID --options runtime --force \
 --timestamp --entitlements ../entitlements.plist"
+VRSN=`readlink build/tk/Tk.framework/Versions/Current`
 
+rm -rf usr_local_bin
+mkdir -p temp usr_local_bin
+
+# Copy executables
+cp build/tcl/Deployment/usr/local/bin/tclsh${VRSN} usr_local_bin
+cp build/tk/Deployment/usr/local/bin/wish${VRSN} usr_local_bin
 codesign ${CODESIGN_OPTS} ${TCL_VERSION_DIR}/tclsh*
 codesign ${CODESIGN_OPTS} ${TCL_VERSION_DIR}/Tcl
 codesign ${CODESIGN_OPTS} ${TCL_FRAMEWORK}
@@ -17,8 +24,7 @@ codesign ${CODESIGN_OPTS} ${TK_VERSION_DIR}/Tk
 codesign ${CODESIGN_OPTS} ${WISH_APP}/Contents/MacOS/Wish
 codesign ${CODESIGN_OPTS} ${WISH_APP}
 codesign ${CODESIGN_OPTS} ${TK_FRAMEWORK}
-
-VRSN=`readlink build/tk/Tk.framework/Versions/Current`
+codesign ${CODESIGN_OPTS} usr_local_bin/tclsh*
 
 # Tcl package parameters
 TCL_PKG_ID="org.tcl-lang.core-Tcl${VRSN}"
@@ -30,7 +36,10 @@ TK_PKG_ID="org.tcl-lang.core-Tk${VRSN}"
 TK_FRAMEWORK="build/tk/Tk.framework"
 TK_TARGET="/Library/Frameworks/Tk.framework"
 
-mkdir -p temp
+# /usr/local/bin package parameters
+BIN_PKG_ID="org.tcl-lang.core-bin${VRSN}"
+BIN_TARGET="/usr/local/bin"
+
 
 # Build and sign a package for the Tcl framework.
 pkgbuild --root ${TCL_FRAMEWORK} \
@@ -49,3 +58,11 @@ pkgbuild --root ${TK_FRAMEWORK} \
          --scripts TkScripts \
          temp/tk.pkg
 productsign --sign ${DEV_ID} temp/tk.pkg tk.pkg
+
+# Build and sign a package for the wish and tclsh executables
+pkgbuild --root usr_local_bin \
+         --identifier ${BIN_PKG_ID} \
+         --version ${VRSN} \
+         --install-location ${BIN_TARGET} \
+         temp/bin.pkg
+productsign --sign ${DEV_ID} temp/bin.pkg bin.pkg

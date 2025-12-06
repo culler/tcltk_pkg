@@ -45,4 +45,4 @@ tk: tk.tar.gz
 	tar xfz tk.tar.gz
 
 clean:
-	rm -rf tcl.tar.gz tk.tar.gz tcl tk *.pkg build temp
+	rm -rf tcl.tar.gz tk.tar.gz tcl tk *.pkg build temp usr_local_bin
