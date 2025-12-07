@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <installer-gui-script minSpecVersion="1">
     <title>Tcl/Tk</title>
-    <background alignment="bottomleft" file="Tcl9logo.png" mime-type="image/png" scaling="proportional"/>
+    <background alignment="bottomleft" file="Tcl9Logo.png" mime-type="image/png" scaling="proportional"/>
+    <background-darkAqua alignment="bottomleft" file="Tcl9Logo-dark.png" mime-type="image/png" scaling="proportional"/>
     <welcome file="Welcome.html" mime-type="text/html"/>
 
     <pkg-ref id="org.tcl-lang.core-Tk9.1.0"/>
