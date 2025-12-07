@@ -12,6 +12,7 @@
     <pkg-ref id="org.tcl-lang.core-TkLib0.9"/>
     <pkg-ref id="org.tcl-lang.core-Sqlite3.50.4"/>
     <pkg-ref id="org.tcl-lang.core-TclTLS2.0"/>
+    <pkg-ref id="org.tcl-lang.core-TkImg2.1.0"/>
     <options customize="allow" require-scripts="true" hostArchitectures="x86_64,arm64"/>
     <choices-outline>
       <line choice="org.tcl-lang.core-Tcl9.1.0"/>
@@ -21,6 +22,7 @@
       <line choice="org.tcl-lang.core-TkLib0.9"/>
       <line choice="org.tcl-lang.core-Sqlite3.50.4"/>
       <line choice="org.tcl-lang.core-TclTLS2.0"/>
+      <line choice="org.tcl-lang.core-TkImg2.1.0"/>
     </choices-outline>
     <choice id="org.tcl-lang.core-Tcl9.1.0" title="Tk" selected="true">
         <pkg-ref id="org.tcl-lang.core-Tcl9.1.0"/>
@@ -43,6 +45,9 @@
     <choice id="org.tcl-lang.core-TclTLS2.0" title="TclTLS">
         <pkg-ref id="org.tcl-lang.core-TclTLS2.0"/>
     </choice>
+    <choice id="org.tcl-lang.core-TkImg2.1.0" title="TkImg">
+        <pkg-ref id="org.tcl-lang.core-TkImg2.1.0"/>
+    </choice>
     <pkg-ref id="org.tcl-lang.core-Tcl9.1.0" version="9.1.0" onConclusion="none">
       tcl.pkg
     </pkg-ref>
@@ -63,5 +68,8 @@
     </pkg-ref>
     <pkg-ref id="org.tcl-lang.core-TclTLS2.0" version="2.0" onConclusion="none">
       tcltls.pkg
+    </pkg-ref>
+    <pkg-ref id="org.tcl-lang.core-TkImg2.1.0" version="2.1.0" onConclusion="none">
+      tkimg.pkg
     </pkg-ref>
 </installer-gui-script>
