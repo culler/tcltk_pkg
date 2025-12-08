@@ -38,9 +38,9 @@ ${DYLIB} ${PKGINDEX}: ${THREAD_SRC} ${THREAD_SRC}/tclconfig
 	cd ${THREAD_SRC}/unix; \
 	export CFLAGS="${THREAD_CFLAGS}"; \
 	../configure --enable-threads \
-	--prefix=/Users/culler/projects/tcltk_pkg/TclThread_src/dist \
-	--exec-prefix=/Users/culler/projects/tcltk_pkg/TclThread_src/dist \
-	--libdir=/Users/culler/projects/tcltk_pkg/TclThread_src/dist/lib \
+	--prefix=$(shell pwd)/dist \
+	--exec-prefix=$(shell pwd)/dist \
+	--libdir=$(shell pwd)/dist/lib \
 	--with-tcl=${TCL} \
 	--with-tclinclude=${TCL}/Headers; \
 	make ZIPFS_BUILD=0 install
