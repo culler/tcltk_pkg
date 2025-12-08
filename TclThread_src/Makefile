@@ -56,7 +56,7 @@ ${THREAD_SRC}: ${TARBALL}
 	tar xfz ${TARBALL}
 
 ${TARBALL}:
-	curl -L -O ${THRED_URL}
+	curl -L -O ${THREAD_URL}
 
 clean:
 	cd ${THREAD_SRC}/unix; \
