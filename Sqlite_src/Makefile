@@ -12,7 +12,7 @@ DYLIB := ${SQLITE_SRC}/libtcl9${PACKAGE}.dylib
 PKG_INDEX := ${SQLITE_SRC}/pkgIndex.tcl
 TCL_VER=`readlink ../TclTk_src/build/tk/Tcl.framework/Versions/Current`
 FRAMEWORK="/Library/Frameworks/Tcl.framework"
-INSTALL_DIR=${FRAMEWORK}/Versions/${TCL_VER}/Resources/Scripts
+INSTALL_DIR=${FRAMEWORK}/Versions/${TCL_VER}/Resources/Scripts/sqlite3
 DEV_ID = $(shell source ../IDs.sh; echo $$DEV_ID)
 CODESIGN_OPTS := -v -s ${DEV_ID} --options runtime --force --timestamp \
 	--entitlements ../entitlements.plist
