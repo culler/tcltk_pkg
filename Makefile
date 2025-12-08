@@ -1,5 +1,7 @@
 TCL_FRAMEWORK := TclTk_src/build/tcl/Tcl.framework
-COMPONENTS := tcl.pkg tk.pkg tcllib.pkg tklib.pkg sqlite.pkg tcltls.pkg tkimg.pkg
+COMPONENTS := tcl.pkg tk.pkg tcllib.pkg tklib.pkg thread.pkg sqlite.pkg \
+tcltls.pkg tkimg.pkg
+
 
 .phony: package clean all_clean
 
@@ -25,6 +27,10 @@ tcllib.pkg:
 tklib.pkg:
 	make -C TkLib_src
 	cp TkLib_src/tklib.pkg .
+
+thread.pkg:
+	make -C TclThread_src
+	cp TclThread_src/thread.pkg .
 
 sqlite.pkg:
 	make -C Sqlite_src
