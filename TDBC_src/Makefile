@@ -9,7 +9,6 @@ TK := ${TK_FRAMEWORK}/Versions/${TK_VERSION}
 TDBC_SRC := tdbc_src
 TARBALL := tdbc.tar.gz
 TDBC_URL =  https://core.tcl-lang.org/tdbc/tarball/main/tdbc_src
-THREAD_URL :=  https://core.tcl-lang.org/thread/tarball/thread-3-0-3/${TARBALL}
 PACKAGE := dist/lib/tdbc
 INSTALL_DIR := ${TCL}/Resources/Scripts/tdbc
 DYLIB := ${PACKAGE}/libtcl9${THREAD_NAME}.dylib

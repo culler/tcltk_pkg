@@ -6,8 +6,8 @@
     <welcome file="Welcome.html" mime-type="text/html"/>
     <options customize="allow" require-scripts="true" hostArchitectures="x86_64,arm64"/>
     <!-- Declarations of component packages defined below -->
-    <pkg-ref id="org.tcl-lang.core-Tk9.1.0"/>
     <pkg-ref id="org.tcl-lang.core-Tcl9.1.0"/>
+    <pkg-ref id="org.tcl-lang.core-Tk9.1.0"/>
     <pkg-ref id="org.tcl-lang.core-bin9.1.0"/>    
     <pkg-ref id="org.tcl-lang.core-TclLib2.0"/>
     <pkg-ref id="org.tcl-lang.core-TkLib0.9"/>
@@ -16,6 +16,7 @@
     <pkg-ref id="org.tcl-lang.core-TclTLS2.0"/>
     <pkg-ref id="org.tcl-lang.core-TkImg2.1.0"/>
     <pkg-ref id="org.tcl-lang.core-TDBC1.1.13"/>
+    <pkg-ref id="org.tcl-lang.core-tDOM0.9.6"/>
     <!-- Declarations of the radio buttons on the Customize pane -->
     <choices-outline>
       <line choice="org.tcl-lang.core-Tcl9.1.0"/>
@@ -28,6 +29,7 @@
       <line choice="org.tcl-lang.core-TclTLS2.0"/>
       <line choice="org.tcl-lang.core-TkImg2.1.0"/>
       <line choice="org.tcl-lang.core-TDBC1.1.13"/>
+      <line choice="org.tcl-lang.core-tDOM0.9.6"/>
     </choices-outline>
     <!-- The component packages associate with the buttons -->
     <choice id="org.tcl-lang.core-Tcl9.1.0" title="Tk">
@@ -60,6 +62,9 @@
     <choice id="org.tcl-lang.core-TDBC1.1.13" title="TDBC">
         <pkg-ref id="org.tcl-lang.core-TDBC1.1.13"/>
     </choice>
+    <choice id="org.tcl-lang.core-tDOM0.9.6" title="tDOM">
+        <pkg-ref id="org.tcl-lang.core-tDOM0.9.6"/>
+    </choice>
     <!-- Descriptions of the component packages -->
     <!-- Apple uses the version number to decide if a package is installed -->
     <pkg-ref id="org.tcl-lang.core-Tcl9.1.0" version="9.1.0" onConclusion="none">
@@ -91,5 +96,8 @@
     </pkg-ref>
     <pkg-ref id="org.tcl-lang.core-TDBC1.1.13" version="1.1.13" onConclusion="none">
       tdbc.pkg
+    </pkg-ref>
+    <pkg-ref id="org.tcl-lang.core-tDOM0.9.6" version="0.9.6" onConclusion="none">
+      tdom.pkg
     </pkg-ref>
 </installer-gui-script>

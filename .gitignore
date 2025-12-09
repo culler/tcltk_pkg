@@ -15,6 +15,10 @@ TclTLS_src/tcltls
 TkLib_src/tklib
 TclThread_src/thread-*
 TDBC_src/tdbc_src
+tDOM_src/include
+tDOM_src/lib
+tDOM_src/share
+tDOM_src/tdom-0.9.6-src
 arm64
 x86_64
 openssl-3*
