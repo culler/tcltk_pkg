@@ -2,6 +2,7 @@ IDs.sh
 *~
 *.pkg
 *.tar.gz
+*.tgz
 build
 temp
 dist
@@ -12,6 +13,8 @@ tcllib
 Sqlite_src/sqlite*
 TclTLS_src/tcltls
 TkLib_src/tklib
+TclThread_src/thread-*
+TDBC_src/tdbc_src
 arm64
 x86_64
 openssl-3*
