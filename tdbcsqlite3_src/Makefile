@@ -18,22 +18,20 @@ TCLCONFIG_URL := https://core.tcl-lang.org/tclconfig/tarball/main/tclconfig.tgz
 DEV_ID := $(shell source ../IDs.sh; echo $$DEV_ID)
 CODESIGN_OPTS := -v -s ${DEV_ID} --options runtime --force --timestamp \
 	--entitlements ../entitlements.plist
-# This fails on the CI runner but works for me.
-#VERSION := $(shell grep "PACKAGE_VERSION=" ${TDBCSQLITE3_SRC}/configure | cut -d"'" -f2)
-VERSION = 1.1.13
 
 .phony: clean
 
 tdbcsqlite3.pkg: ${PACKAGE_FILES}
 	mkdir -p temp;
+	export VERSION=`grep "PACKAGE_VERSION=" ${TDBCSQLITE3_SRC}/configure | cut -d"'" -f2`; \
 	pkgbuild --root ${PACKAGE} \
 	  --identifier core.tcl-lang.org-tdbcsqlite${VERSION} \
-	  --version ${VERSION} \
+	  --version $${VERSION} \
 	  --install-location ${INSTALL_DIR} \
 	  temp/tdbcsqlite3.pkg;
 	productsign --sign ${DEV_ID} temp/tdbcsqlite3.pkg tdbcsqlite3.pkg
 
-${PACKAGE_FILES}: ${TDBCSQLITE3_SRC} ${TDBCSQLITE3_SRC}/tclconfig
+${PACKAGE_FILES}: ${TDBCSQLITE3_SRC}/tclconfig
 	mkdir -p ${PACKAGE} ${LIBRARY}
 	cd ${TDBCSQLITE3_SRC}; \
 	./configure --with-tdbc=../../TDBC_src/tdbc_src; \
