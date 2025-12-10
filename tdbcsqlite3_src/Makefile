@@ -18,7 +18,9 @@ TCLCONFIG_URL := https://core.tcl-lang.org/tclconfig/tarball/main/tclconfig.tgz
 DEV_ID := $(shell source ../IDs.sh; echo $$DEV_ID)
 CODESIGN_OPTS := -v -s ${DEV_ID} --options runtime --force --timestamp \
 	--entitlements ../entitlements.plist
-VERSION := $(shell grep "PACKAGE_VERSION=" ${TDBCSQLITE3_SRC}/configure | cut -d"'" -f2)
+# This fails on the CI runner but works for me.
+#VERSION := $(shell grep "PACKAGE_VERSION=" ${TDBCSQLITE3_SRC}/configure | cut -d"'" -f2)
+VERSION = 1.1.13
 
 .phony: clean
 
