@@ -5,7 +5,7 @@ BRANCH := main
 TCLCONFIG_URL := https://core.tcl-lang.org/tclconfig/tarball/${BRANCH}
 TCLLIB_URL := https://core.tcl-lang.org/tcllib/tarball/${BRANCH}
 DEV_ID := $(shell source ../IDs.sh; echo $$DEV_ID)
-INSTALL_DIR := ${FRAMEWORK}/Versions/${TCL_VERSION}/Resources/Scripts
+INSTALL_DIR := /Library/Frameworks/Tcl.framework/Versions/${TCL_VERSION}/Resources/Scripts
 TCLLIB_CFLAGS := -arch arm64 -arch x86_64 -mmacosx-version-min=10.13
 
 .phony: clean
