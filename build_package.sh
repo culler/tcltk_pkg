@@ -9,6 +9,7 @@ productbuild --distribution distribution.plist \
 productsign --sign $DEV_ID temp/tcltk.pkg tcltk.pkg
 
 # Notarize the product
+echo "Notarizing package file ..."
 xcrun notarytool submit tcltk.pkg \
       --apple-id $APPLE_ID \
       --team-id $DEV_ID \

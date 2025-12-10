@@ -1,6 +1,6 @@
 TCL_FRAMEWORK := TclTk_src/build/tcl/Tcl.framework
 COMPONENTS := tcl.pkg tk.pkg tcllib.pkg tklib.pkg thread.pkg sqlite.pkg \
-tcltls.pkg tkimg.pkg tdbc.pkg tdom.pkg
+tcltls.pkg tkimg.pkg tdbc.pkg tdbcsqlite3.pkg tdom.pkg
 
 .phony: package clean all_clean
 
@@ -42,6 +42,10 @@ tkimg.pkg:
 tcltls.pkg: openssl/arm64 openssl/x86_64
 	make -C TclTLS_src
 	cp TclTLS_src/tcltls.pkg .
+
+tdbcsqlite3.pkg : tdbc.pkg
+	make -C tdbcsqlite3_src
+	cp tdbcsqlite3_src/tdbcsqlite3.pkg .
 
 tdbc.pkg:
 	make -C TDBC_src

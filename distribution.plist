@@ -16,6 +16,7 @@
     <pkg-ref id="org.tcl-lang.core-TclTLS2.0"/>
     <pkg-ref id="org.tcl-lang.core-TkImg2.1.0"/>
     <pkg-ref id="org.tcl-lang.core-TDBC1.1.13"/>
+    <pkg-ref id="org.tcl-lang.core-tdbcsqlite1.1.13"/>
     <pkg-ref id="org.tcl-lang.core-tDOM0.9.6"/>
     <!-- Declarations of the radio buttons on the Customize pane -->
     <choices-outline>
@@ -29,6 +30,7 @@
       <line choice="org.tcl-lang.core-TclTLS2.0"/>
       <line choice="org.tcl-lang.core-TkImg2.1.0"/>
       <line choice="org.tcl-lang.core-TDBC1.1.13"/>
+      <line choice="org.tcl-lang.core-tdbcsqlite1.1.13"/>
       <line choice="org.tcl-lang.core-tDOM0.9.6"/>
     </choices-outline>
     <!-- The component packages associate with the buttons -->
@@ -61,6 +63,9 @@
     </choice>
     <choice id="org.tcl-lang.core-TDBC1.1.13" title="TDBC">
         <pkg-ref id="org.tcl-lang.core-TDBC1.1.13"/>
+    </choice>
+    <choice id="org.tcl-lang.core-tdbcsqlite1.1.13" title="tdbc::sqlite3">
+        <pkg-ref id="org.tcl-lang.core-tdbcsqlite1.1.13"/>
     </choice>
     <choice id="org.tcl-lang.core-tDOM0.9.6" title="tDOM">
         <pkg-ref id="org.tcl-lang.core-tDOM0.9.6"/>
@@ -96,6 +101,9 @@
     </pkg-ref>
     <pkg-ref id="org.tcl-lang.core-TDBC1.1.13" version="1.1.13" onConclusion="none">
       tdbc.pkg
+    </pkg-ref>
+    <pkg-ref id="org.tcl-lang.core-tdbcsqlite1.1.13" version="1.1.13" onConclusion="none">
+      tdbcsqlite3.pkg
     </pkg-ref>
     <pkg-ref id="org.tcl-lang.core-tDOM0.9.6" version="0.9.6" onConclusion="none">
       tdom.pkg
