@@ -8,7 +8,7 @@ TCL := ${TCL_FRAMEWORK}/Versions/${TCL_VERSION}
 TK := ${TK_FRAMEWORK}/Versions/${TK_VERSION}
 
 TDBCSQLITE3_SRC := tdbcsqlite3
-TARBALL := tdbcsqlite3.tar.gz
+TARBALL := tdbcsqlite3.tgz
 TDBCSQLITE3_URL := https://core.tcl-lang.org/tdbcsqlite3/tarball/${TARBALL}
 PACKAGE := dist/tdbcsqlite3
 PKG_INDEX := ${TDBCSQLITE3_SRC}/pkgIndex.tcl
@@ -39,10 +39,10 @@ ${PACKAGE_FILES}: ${TDBCSQLITE3_SRC}/tclconfig
 	sed 's/.. library //' ${PKG_INDEX} > ${PACKAGE}/pkgIndex.tcl
 	cp ${TDBCSQLITE3_SRC}/library/tdbcsqlite3.tcl ${PACKAGE}
 
-${TDBCSQLITE3_SRC}/tclconfig: tclconfig.tgz
+${TDBCSQLITE3_SRC}/tclconfig: ${TDBCSQLITE3_SRC} tclconfig.tgz
 	cd ${TDBCSQLITE3_SRC}; tar xvfz ../tclconfig.tgz
 
-tclconfig.tgz:
+tclconfig.tgz: 
 	curl -L -O ${TCLCONFIG_URL}
 
 ${TDBCSQLITE3_SRC}: ${TARBALL}
@@ -56,4 +56,4 @@ clean:
 	if [ -e Makefile ]; then \
 	    make distclean; \
 	fi;
-	rm -rf dist temp *.pkg
+	rm -rf dist temp *.pkg *.tgz ${TDBCSQLITE3_SRC};

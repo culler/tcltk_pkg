@@ -19,6 +19,7 @@ tDOM_src/include
 tDOM_src/lib
 tDOM_src/share
 tDOM_src/tdom-0.9.6-src
+tdbcsqlite3_src/tdbcsqlite3
 arm64
 x86_64
 openssl-3*
