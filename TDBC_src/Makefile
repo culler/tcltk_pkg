@@ -14,7 +14,7 @@ INSTALL_DIR := ${TCL}/Resources/Scripts/tdbc
 DYLIB := ${PACKAGE}/libtcl9${THREAD_NAME}.dylib
 PKGINDEX := ${PACKAGE}/pkgIndex.tcl
 TCLCONFIG_URL := https://core.tcl-lang.org/tclconfig/tarball/main/tclconfig.tgz
-THREAD_CFLAGS := -arch x86_64 -arch arm64 -mmacosx-version-min=10.13
+TDBC_CFLAGS := -arch x86_64 -arch arm64 -mmacosx-version-min=10.13
 DEV_ID := $(shell source ../IDs.sh; echo $$DEV_ID)
 CODESIGN_OPTS := -v -s ${DEV_ID} --options runtime --force --timestamp \
 	--entitlements ../entitlements.plist
@@ -34,6 +34,7 @@ tdbc.pkg: dist/tdbc
 dist/tdbc: ${TDBC_SRC} ${TDBC_SRC}/tclconfig
 	export PREFIX=$(shell pwd)/dist; \
 	cd ${TDBC_SRC}; \
+	export CFLAGS="${TDBC_CFLAGS}"; \
 	./configure \
 	--prefix=$$PREFIX \
 	--exec-prefix=$$PREFIX; \

@@ -31,6 +31,7 @@ tdom.pkg: ${PACKAGE}
 
 ${PACKAGE}: ${TDOM_SRC}
 	cd ${TDOM_SRC}; \
+	export CFLAGS="${TDOM_CFLAGS}"; \
 	./configure \
 	  --prefix=${PREFIX} \
 	  --exec-prefix=${PREFIX} \
