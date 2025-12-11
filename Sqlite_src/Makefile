@@ -36,8 +36,9 @@ ${SQLITE_SRC}.zip:
 	curl -L -O ${SQLITE_URL}
 
 ${DYLIB} ${PKG_INDEX}: ${SQLITE_SRC}
+	export CC="gcc ${SQLITE_CFLAGS}"; \
 	cd ${SQLITE_SRC}; \
-	./configure --with-tcl="${TCL_FRAMEWORK}" -with-tclsh="${TCLSH}"; \
+	./configure --all --with-tcl="${TCL_FRAMEWORK}" -with-tclsh="${TCLSH}"; \
 	CFLAGS="${SQLITE_CFLAGS}"; \
 	make -e tclextension
 
