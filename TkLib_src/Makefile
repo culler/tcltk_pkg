@@ -1,11 +1,11 @@
 SHELL := /bin/bash
-TCL_FRAMEWORK := ../TclTk_build/build/tcl/Tcl.framework
-TCL_VERSION := $(shell readlink ${TCL_FRAMEWORK}/Versions/Current)
+TK_FRAMEWORK := ../TclTk_build/build/tcl/Tcl.framework
+TK_VERSION := $(shell readlink ${TK_FRAMEWORK}/Versions/Current)
 BRANCH := trunk
 TCLCONFIG_URL := https://core.tcl-lang.org/tclconfig/tarball/${BRANCH}/tclconfig.tar.gz
 TKLIB_URL := https://core.tcl-lang.org/tklib/tarball/${BRANCH}
 DEV_ID := $(shell source ../IDs.sh; echo $$DEV_ID)
-INSTALL_DIR := ${FRAMEWORK}/Versions/${TCL_VERSION}/Resources/Scripts
+INSTALL_DIR := /Library/Frameworks/Tk.framework/Versions/${TK_VERSION}/Resources/Scripts
 
 .phony: clean
 
